@@ -11,11 +11,15 @@
 
 // TODO: loginRequest 함수를 작성하세요.
 async function loginRequest(id, pw) {
-    return new Promise((resolve,reject)=>{
-        if()
-    })
-    
+  return new Promise((resolve, reject) => {
+    if (id.trim() === "admin" && pw.trim() === "1234") {
+      resolve("ok");
+    } else {
+      reject("fail");
+    }
+  });
 }
 
+console.log(loginRequest("admin", "1234"));
 // export를 수정하지 마세요.
 export { loginRequest };

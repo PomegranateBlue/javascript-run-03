@@ -10,7 +10,7 @@
  * @example
  * const promiseA = new Promise((resolve) => setTimeout(() => resolve('A'), 100));
  * const promiseB = new Promise((resolve) => setTimeout(() => resolve('B'), 50));
- *
+ * promise.all 사용
  * parallelRequests(promiseA, promiseB).then((results) => {
  *   console.log(results); // ['A', 'B']
  * });
