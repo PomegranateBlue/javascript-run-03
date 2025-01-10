@@ -12,9 +12,13 @@
  */
 
 async function timeOut(promise, ms) {
-  return Promise((resolve, reject) => {
-    setTimeout(() => resolve(promise));
-  }, ms);
+  //반환값은 race로 반환
+  const failPromise = new Promise((_, reject) => {
+    setTimeout(() => {
+      reject("timeout");
+    }, ms);
+  });
+  return Promise.race([promise, failPromise]);
 }
 // export를 수정하지 마세요.
 export { timeOut };
